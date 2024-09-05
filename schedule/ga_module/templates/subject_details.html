@@ -1,0 +1,17 @@
+
+    
+{% extends "master.html" %}
+
+{% block title %}
+    Details about {{ mysubjects.subject_code }} {{ mysubjects.subject_name }}
+{% endblock %} 
+
+{% block content %}
+        <h1> {{mysubjects.subject_code}} {{mysubjects.subject_name}} </h1>
+
+        <p>Available Time: {{ mysubjects.subject_time }}</p>
+        <p> Subject Days: {{ mysubjects.subject_day }} </p>
+        
+        <p><a href="/ga_module"> - RETURN -</a></p> 
+{% endblock %}
+       
