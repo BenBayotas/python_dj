@@ -8,12 +8,22 @@ class Subject(models.Model):
     subject_time = models.CharField(max_length=255, null=True)
     subject_day = models.CharField(max_length=255, null=True)
 
+    def __str__(self):
+        return f"{self.subject_code} - {self.subject_name}"
+
+
+
 class Teacher(models.Model):
     teacher_id = models.IntegerField()
     teacher_name = models.CharField(max_length=255)
     subject_code1 = models.CharField(max_length=255)
     subject_code2 = models.CharField(max_length=255)
     subject_code3 = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.teacher_id} - {self.teacher_name}"
+
+
 
 class Room(models.Model):
     LOCALE = {
@@ -29,3 +39,6 @@ class Room(models.Model):
     room_id = models.CharField(max_length=255)
     room_locale = models.CharField(max_length=64, choices=LOCALE, default='CB')
     room_type = models.CharField(max_length=64, choices=ROOM_TYPE, default='LEC')
+
+    def __str__(self):
+        return f"{self.room_id}"
